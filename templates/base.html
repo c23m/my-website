@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Grassit{% endblock %}</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico">
+    <link rel="stylesheet" href="/static/css/base.css">
+    {% block head %}{% endblock %}
+    <script>
+        let theme = localStorage.getItem('theme');
+        if (!theme) {
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+</head>
+
+<body>
+    {% block header %}{% endblock %}
+    <nav>
+        <a class="icon logo" href="http://www.grassit.cn"></a>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="#articles">文档</a></li>
+            <li><a href="test.html">测试</a></li>
+            <li><a href="">文本</a></li>
+            <li><a href="">文本</a></li>
+        </ul>
+        <button id="menu" class="icon menu"></button>
+        <div class="buttons">
+            <div class="icon-wrapper">
+                <button id="theme" class="icon light"></button>
+            </div>
+            <a class="icon github" href="https://github.com/c23m" target="_blank"></a>
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="links">
+            <a href="#">关于</a>
+            <span class="divider">|</span>
+            <a href="#">联系</a>
+            <span class="divider">|</span>
+            <a href="#">查找</a>
+            <span class="divider">|</span>
+            <a href="#">发布</a>
+        </div>
+
+        <div class="beian">
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">皖ICP备2025089416号</a>
+            <span class="footer-divider">|</span>
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode= (公安备案号)" target="_blank"
+                rel="noopener noreferrer">
+                <!-- 此处添加公安备案号 -->
+            </a>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 版权所有
+        </div>
+
+        <div class="notice">
+            内容供个人学习交流使用
+        </div>
+    </footer>
+    <script>
+        function applyTheme(theme) {
+            if (theme !== 'dark') {
+                theme = 'light'
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            const themeIcon = document.querySelector('#theme');
+            if (themeIcon) {
+                themeIcon.classList.remove('light', 'dark');
+                themeIcon.classList.add(theme);
+            }
+        }
+        applyTheme(localStorage.getItem('theme'));
+        document.querySelector('#theme').addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+        });
+    </script>
+    {% block script %}{% endblock %}
+</body>
+
+</html>

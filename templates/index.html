@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}主页{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/static/css/style.css">
+{% endblock %}
+{% block header %}
+<header class="header">
+    <h1>GRASSIT</h1>
+    <p>
+        欢迎来到本站！
+        <br>
+        可以在此进行学习。
+    </p>
+    <div>
+        <button id="lButton">&lt;</button>
+        <button id="rButton">&gt;</button>
+    </div>
+</header>
+{% endblock %}
+{% block content %}
+<aside class="articles" id="articles">
+    <h2>文章列表</h2>
+    <ul>
+        <li><a href="/atticle/dog.html">Dog(<em>Development of Grassit</em>)</a></li>
+        <li><a href="/atticle/deswaq.html">DESWAQ(<em>Disappeared Entrance: Start Without Any Quests</em>)</a>
+        </li>
+        <li><a href="/article/cpp.html">C++文档(算法竞赛)</a></li>
+        <li><a href="/article/entity.html">实体文档</a></li>
+        <li><a href="/article/summary.html">总结</a></li>
+        <li><a href="/article/entities_list.html">实体列表</a></li>
+    </ul>
+</aside>
+<section class="products">
+    <h2>推荐列表</h2>
+    <ul>
+        <li>
+            <div class="info">
+                <h3>
+                    访问学校官网
+                </h3>
+                <p>
+                    本站可以跳转到<strong>学校官网</strong>。真是一项<span class="weak">实用</span>的功能！
+                    本站可以跳转到<strong>学校官网</strong>。真是一项<span class="weak">实用</span>的功能啊！
+                    本站可以跳转到<strong>学校官网</strong>。真是一项<span class="weak">实用</span>的功能啊！
+                </p>
+            </div>
+            <div class="image">
+                <a href="https://www.hfut.edu.cn" target="_blank">&rightarrow;</a>
+            </div>
+        </li>
+
+        <li>
+            <div class="info">
+                <h3>
+                    请输入文本
+                </h3>
+                <p>
+                    会跳转到本站测试界面。一个用来测试<em>html/css/js</em>的界面。
+                    会跳转到本站测试界面。一个用来测试<em>html/css/js</em>的界面。
+                    会跳转到本站测试界面。一个用来测试<em>html/css/js</em>的界面。
+                </p>
+            </div>
+            <div class="image">
+                <a href="/wiki/dog" target="_blank">&rightarrow;</a>
+            </div>
+        </li>
+        <li>
+            <div class="info">
+                <h3>
+                    占位符
+                </h3>
+                <p>
+                    盼望着，盼望着，东风来了，<strong>春天</strong>的脚步近了。
+                    <span class="weak">一切都像刚睡醒的样子</span>，欣欣然张开了眼。山朗润起来了，水涨起来了，太阳的脸红起来了。
+                    小草偷偷地从土里钻出来，嫩嫩的，绿绿的。
+                </p>
+            </div>
+            <div class="image">
+                <a href="https://deepseek.com" target="_blank">&rightarrow;</a>
+            </div>
+        </li>
+</section>
+{% endblock %}
+{% block script%}
+<script src="/static/js/main.js"></script>
+{% endblock %}

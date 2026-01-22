@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}页面未找到{% endblock %}
+{% block head %}
+<style>
+    main {
+        padding: 40px;
+    }
+
+    .footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<h3>页面没找到</h3>
+请检查URL, 再试一次吧...
+<br>
+<a href="/">返回主页</a>
+{% endblock %}
