@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+html {
+    font: 12px/1.5 "Microsoft Yahei";
+}
+
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #ccc;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+h3 {
+    font: 200 30px sans-serif;
+    margin: 20px 30px;
+}
+
+.header {
+    height: 50px;
+    width: 100vw;
+    background: rgb(120, 223, 255);
+}
+
+.icon img {
+    height: 50px;
+    margin-left: 20px;
+    float: left;
+}
+
+.nav {
+    font-size: 15px;
+    width: 600px;
+    height: 50px;
+    margin: 0 auto;
+    padding-top: 12px;
+    text-align: center;
+    color: gray;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.user {
+    display: block;
+    float: right;
+    overflow: hidden;
+    position: relative;
+}
+
+.user img {
+    height: 30px;
+    float: right;
+    margin: 10px;
+}
+
+.user h5 {
+    font: 200 20px "Microsoft Yahei";
+    float: right;
+    color: #333;
+    padding-top: 10px;
+    margin-right: 20px;
+}
+
+.user a:hover {
+    color: gray;
+}
+
+.message {
+    font: 200 20px "Microsoft Yahei";
+    text-align: center;
+    margin: 400px 0;
+}
+
+.bigscreen {
+    text-align: center;
+    height: 600px;
+}
+
+.bigscreen img {
+    width: 800px;
+    height: 600px;
+}
+
+.infoblock li {
+    display: block;
+    margin: 30px 100px;
+    width: 800px;
+    height: 300px;
+    background: #fff;
+}
+
+.infoblock img {
+
+    height: 300px;
+    float: left;
+}
+
+.infoblock span {
+    width: 400px;
+    float: left;
+}
+
+.infoblock h4 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 32px;
+    color: #000;
+}
+
+.info {
+    margin: 10px 50px;
+    font-size: 20px;
+    height: 160px;
+}
+
+.infoblock li:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    transition: all, 0.2s;
+}
+
+.price {
+    margin: 30px;
+    text-align: center;
+}
+
+b {
+    color: orange;
+}
+
+.ordash {
+    color: gray;
+}
+
+.ani {
+    width: 200px;
+    height: 60px;
+    color: #fff;
+    background: #000;
+    animation: up 5s linear 1s infinite forwards alternate;
+}
+
+.ani1 {
+    width: 16ch;
+    overflow: hidden;
+    margin: 20px auto;
+    white-space: nowrap;
+    font: 32px "Courier New";
+    animation: down 5s steps(16) 1;
+}
+
+@keyframes up {
+    0% {
+        width: 100px;
+    }
+
+    100% {
+        width: 500px;
+        transform: translateX(200px);
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+@keyframes down {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 16ch;
+    }
+
+
+}
+
+.footer {
+    background-color: #f8f8f8;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid #e7e7e7;
+    font-size: 14px;
+    color: #666;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #333;
+}
+
+.footer-divider {
+    margin: 0 5px;
+    color: #ccc;
+}
+
+.footer-beian {
+    margin-top: 15px;
+    line-height: 1.8;
+}
+
+.footer-beian a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer-beian a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+}
