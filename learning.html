@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习页面</title>
+    <link rel="stylesheet" href="assets/css/learn.css">
+</head>
+
+<body>
+    <!-- 页头，通常放导航。-->
+    <header>
+        <a href="index.html">返回主站</a>
+        <nav class="site-nav" aria-label="主导航">
+            <ul>
+                <li><a href="#h1-title">顶部</a></li>
+                <li><a href="#test-form">表单</a></li>
+                <li><a href="#bottom">底部</a></li>
+            </ul>
+    </header>
+    <!-- 核心内容区：main -->
+    <main class="learning-content">
+        <section id="layout-test" aria-labelledby="layout-heading">
+            <h2 id="layout-heading">现代布局测试区</h2>
+
+            <!-- 测试1：Flexbox导航 -->
+            <div class="test-case">
+                <h3>Flexbox导航</h3>
+                <nav class="flex-nav-test">
+                    <a href="#home">首页</a>
+                    <a href="#about">关于</a>
+                    <a href="#services">服务</a>
+                    <a href="#contact">联系</a>
+                </nav>
+            </div>
+
+            <!-- 测试2：CSS Grid卡片网格 -->
+            <div class="test-case">
+                <h3>CSS Grid卡片网格</h3>
+                <div class="grid-card-test">
+                    <div class="card">卡片1</div>
+                    <div class="card">卡片2</div>
+                    <div class="card">卡片3</div>
+                    <div class="card">卡片4</div>
+                </div>
+            </div>
+
+            <!-- 测试3：响应式图片画廊 -->
+            <div class="test-case">
+                <h3>响应式画廊</h3>
+                <div class="gallery">
+                    <img src="assets/images/pict.png" alt="测试图片1" loading="lazy">
+                    <img src="assets/images/pict.png" alt="测试图片2" loading="lazy">
+                    <img src="assets/images/pict.png" alt="测试图片3" loading="lazy">
+                </div>
+            </div>
+        </section>
+        <!-- 文本元素 -->
+        <section id="text-elements" aria-invalid="text-heading">
+            <h1 id="h1-title"> 标题层级演示 H1~H6 </h1>
+            <h2> 这是二级标题 <strong>h2</strong> </h2>
+            <h3> 这是三级标题 h3 </h3>
+            <h4> 这是四级标题 h4 </h4>
+            <h5> 这是五级标题 h5 </h5>
+            <h6> <a href="#bottom">h6-点击前往底部</a></h6>
+
+            <!-- 语义化文本标签 -->
+            <article>
+                <p class="bold red">我们应让绿色生活引领社会风尚。<br>
+                    绿色生活方式应该成为每个人的<strong>行为指南</strong>。
+                    在日常生活中,<br>我们可以从<em>点滴小事</em>做起,<br>
+                    如节约用水用电、少用塑料袋、多植树、多乘坐<del>公共交通工具</del>、垃圾分类。
+                    这些绿色生活小事,<br>体现了 <ins>爱护自然</ins>和生命、崇尚节约和再生利用的文明理念。
+                    只有全社会树立生态文明的新风尚,<br>&nbsp;&nbsp;
+                    才能进一步巩固、扩大当下的绿色发展成果,<br>让其惠及未来更多的人。
+                </p>
+                <p class="lighter">我们应让绿色生活引领社会风尚。<br>
+                    绿色生活方式应该成为每个人的<strong>行为指南</strong>。
+                    在日常生活中,<br>我们可以从<em>点滴小事</em>做起,<br>
+                    如节约用水用电、少用塑料袋、多植树、多乘坐<del>公共交通工具</del>、垃圾分类。
+                    这些绿色生活小事,<br>体现了 <ins>爱护自然</ins>和生命、崇尚节约和再生利用的文明理念。
+                    只有全社会树立生态文明的新风尚,<br>&nbsp;&nbsp;
+                    才能进一步巩固、扩大当下的绿色发展成果,<br>让其惠及未来更多的人。
+                </p>
+            </article>
+        </section>
+
+        <!-- 表单元素 -->
+        <section id="test-form" aria-labelledby="form-heading">
+            <h2 id="form-heading">表单元素示例</h2>
+            <p>表单是用来收集用户输入的。每个输入控件都应有对应的标签(<code>&lt;label&gt;</code>)。</p>
+            <form action="/submit" method="post" novalidate>
+                <fieldset>
+                    <legend>个人信息</legend>
+                    <div class="form-group">
+                        <label for="user-name">姓名 <span class="required">*</span></label>
+                        <input type="text" id="user-name" name="user-name" placeholder="请输入姓名" required>
+                        <p class="form-hint">请输入真实姓名</p>
+                    </div>
+
+                    <div class="form-group">
+                        <span class="form-label">性别 <span class="required">*</span></span>
+                        <div class="radio-group">
+                            <input type="radio" value="man" id="man" name="gender" checked="checked"><label
+                                for="man">男</label>
+                            <input type="radio" value="woman" id="woman" name="gender"><label for="woman">女</label>
+                            <input type="radio" value="other" id="other" name="gender"><label for="other">其他</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-pwd">密码 <span class="required">*</span></label>
+                        <input type="password" id="user-pwd" name="user-pwd" autocomplete="current-password" required>
+                        <p class="form-hint">请输入密码</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth-date">出生日期</label>
+                        <input type="date" id="birth-date" name="birth-date">
+                    </div>
+
+                    <div class="form-group">
+                        <span class="form-label">爱好</span>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="hobby-coding" name="hobbies" value="coding" checked><label
+                                for="hobby-coding">编程</label>
+                            <input type="checkbox" id="hobby-math" name="hobbies" value="math"><label for="hobby-math"
+                                class="red font32">数学</label>
+                            <input type="checkbox" id="hobby-music" name="hobbies" value="music"><label
+                                for="hobby-music">音乐</label>
+                            <input type="checkbox" id="hobby-sports" name="hobbies" value="sports"><label
+                                for="hobby-sports">运动</label>
+                        </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>其他信息</legend>
+                    <div class="form-group">
+                        <label for="conutry-select">国家/地区</label>
+                        <select id="conutry-select" name="country">
+                            <option value="" disabled selected>请选择...</option>
+                            <option value="cn">中国</option>
+                            <option value="us">美国</option>
+                            <option value="uk">英国</option>
+                            <option value="jp">日本</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-bio">个人简介</label>
+                        <textarea id="user-bio" name="bio" rows="4" placeholder="请输入个人简介">此为默认文本。</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="file-upload">上传头像</label>
+                        <input type="file" id="file-upload" name="avatar" accept="image/*">
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                    <button type="reset" class="btn btn-secondary">重置</button>
+                    <button type="button" id="alert-button" class="btn">测试</button>
+                </div>
+            </form>
+        </section>
+        <section id="js-test" aria-labelledby="js-heading">
+            <h2 id="js-heading">JavaScript交互测试</h2>
+
+            <!-- 测试1：计数器应用 -->
+            <div class="test-case">
+                <h3>计数器</h3>
+                <div class="counter">
+                    <button id="decrease">-</button>
+                    <span id="count">0</span>
+                    <button id="increase">+</button>
+                    <button id="reset">重置</button>
+                </div>
+            </div>
+
+            <!-- 测试2：待办事项列表 -->
+            <div class="test-case">
+                <h3>待办事项</h3>
+                <div class="todo-app">
+                    <input type="text" id="todo-input" placeholder="添加新任务...">
+                    <button id="add-todo">添加</button>
+                    <ul id="todo-list"></ul>
+                </div>
+            </div>
+
+            <!-- 测试3：API数据获取 -->
+            <div class="test-case">
+                <h3>数据获取测试</h3>
+                <button id="fetch-data">获取数据</button>
+                <div id="data-output"></div>
+            </div>
+        </section>
+        <!-- 数据表 -->
+        <section id="data-table" aria-labelledby="table-heading">
+            <h2 id="table-heading">数据表示例</h2>
+            <p>表格仅用于展示</p>
+
+
+            <figure>
+                <figcaption>成绩单</figcaption>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">科目</th>
+                            <th scope="col">平时</th>
+                            <th scope="col">期末</th>
+                            <th scope="col">总成绩</th>
+                            <th scope="col">绩点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" rowspan="2">高数</th>
+                            <td>85</td>
+                            <td colspan="2"> 95</td>
+                            <td rowspan="2">4.0</td>
+                        </tr>
+                        <tr>
+                            <td>76</td>
+                            <td>88</td>
+                            <td>82.0</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="col">平均</th>
+                            <td>80</td>
+                            <td>90</td>
+                            <td>85.0</td>
+                            <td>3.5</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </figure>
+        </section>
+        <section id="animation-test" aria-labelledby="animation-heading">
+            <h2 id="animation-heading">CSS动画测试</h2>
+
+            <!-- 测试1：关键帧动画 -->
+            <div class="test-case">
+                <h3>旋转动画</h3>
+                <div class="spinner"></div>
+                <button id="toggle-spin">切换动画</button>
+            </div>
+
+            <!-- 测试2：过渡效果 -->
+            <div class="test-case">
+                <h3>悬停过渡</h3>
+                <div class="transition-box">悬停我</div>
+            </div>
+
+            <!-- 测试3：打字机效果（来自main.html的.ani1改进） -->
+            <div class="test-case">
+                <h3>打字机效果</h3>
+                <p class="typewriter">欢迎来到前端学习页面！</p>
+            </div>
+        </section>
+        <aside id="misc-elements" aria-labelledby="misc-heading">
+            <h3 id="misc-heading">其他元素示例</h3>
+            <div>
+                <h4>下载链接</h4>
+                <ul class="link-list">
+                    <li><a href="assets/images/pict.png" download="sunny.png"> 下载图片 </a></li>
+                    <li><a href="assets/zip/aaa.zip"> 下载压缩包 </a></li>
+                    <li><a href="#" aria-disabled="true"> 禁用链接 </a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>外部链接</h4>
+                <p>访问
+                    <a href="https://www.deepseek.com" target="_blank" rel="noopener noreferrer">DeepSeek
+                        网站<sup>↗</sup></a>
+                    了解更多信息。
+            </div>
+            <div>
+                <h4>图片链接</h4>
+                <img src="assets/images/pict.png" alt="糟糕，无法显示图片" title=" You move your mouse in the picture">
+                <figure>
+                    <a href="https://www.deepseek.com">
+                        <img src="assets/images/pict.png" alt="示例图片" loading="lazy">
+                    </a>
+                    <figcaption>点击图片可访问 DeepSeek 网站</figcaption>
+                </figure>
+            </div>
+            <div>
+                <h4>列表</h4>
+                <div class="list-demo">
+                    <article>
+                        <h5>无序列表</h5>
+                        <ul class="unlist">
+                            <li>sth1</li>
+                            <li>sth2</li>
+                            <li>sth3</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h5>有序列表</h5>
+                        <ol class="orderlist">
+                            <li>itemA</li>
+                            <li>itemB</li>
+                            <li>itemC</li>
+                        </ol>
+                    </article>
+                    <article>
+                        <h5>描述列表</h5>
+                        <dl>
+                            <dt>项一</dt>
+                            <dd>这是项一的描述。</dd>
+                            <dt>项二</dt>
+                            <dd>这是项二的描述。</dd>
+                        </dl>
+                    </article>
+                </div>
+            </div>
+            <div class="bi"></div>
+            <p class="at"></p>
+            <a href="https://www.deepseek.com" class="none" target="_blank">访问deepseek</a>
+
+            <div class="test-case">
+                <h4>UI组件测试</h4>
+
+                <!-- 模态框 -->
+                <button id="open-modal">打开模态框</button>
+                <div class="modal" id="test-modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>这是一个模态框示例</p>
+                    </div>
+                </div>
+
+                <!-- 标签页 -->
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="tab1">标签1</button>
+                    <button class="tab-button" data-tab="tab2">标签2</button>
+                    <div class="tab-content active" id="tab1">标签1的内容</div>
+                    <div class="tab-content" id="tab2">标签2的内容</div>
+                </div>
+
+                <!-- 折叠面板 -->
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-button">如何学习前端？</button>
+                        <div class="accordion-content">
+                            <p>从HTML、CSS、JavaScript基础开始...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section id="project-test" aria-labelledby="project-heading">
+            <h2 id="project-heading">综合项目：用户管理系统</h2>
+
+            <!-- 用户列表 -->
+            <div class="user-management">
+                <div class="controls">
+                    <input type="text" id="search-user" placeholder="搜索用户...">
+                    <button id="add-user">添加用户</button>
+                    <button id="sort-users">排序</button>
+                </div>
+
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>姓名</th>
+                            <th>邮箱</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="user-table-body">
+                        <!-- 通过JS动态添加 -->
+                    </tbody>
+                </table>
+
+                <!-- 用户表单 -->
+                <form id="user-form" class="hidden">
+                    <input type="text" name="name" placeholder="姓名" required>
+                    <input type="email" name="email" placeholder="邮箱" required>
+                    <button type="submit">保存</button>
+                    <button type="button" id="cancel-form">取消</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- 页脚，通常放版权信息等。-->
+    <footer class="footer" id="bottom">
+        <p>此项目用于学习HTML</p>
+        <p>
+            <a href="#h1-title" aria-label="返回页面顶部"> Return to top </a>
+            <a href="main.html">返回主站</a>
+        </p>
+    </footer>
+    <script src="assets/js/learning.js"></script>
+</body>
+
+</html>

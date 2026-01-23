@@ -1,0 +1,8 @@
+ver 1.0.0 25/08/06
+// 0 is means nothing (not empty, is null)
+空白-empty-1
+玩家-robot-2
+家园-home-3
+尖刺-spike-4
+传送带-belt-5
+屏障-barrier-6

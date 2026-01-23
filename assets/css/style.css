@@ -19,6 +19,8 @@ body {
     line-height: 1.6;
     color: #333;
     background: #ccc;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 a {
@@ -47,9 +49,8 @@ h3 {
     float: left;
 }
 
-.nav {
+nav {
     font-size: 15px;
-    width: 600px;
     height: 50px;
     margin: 0 auto;
     padding-top: 12px;
@@ -57,7 +58,7 @@ h3 {
     color: gray;
 }
 
-.nav a:hover {
+nav a:hover {
     text-decoration: underline;
 }
 
@@ -93,14 +94,24 @@ h3 {
 }
 
 .bigscreen {
-    text-align: center;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 800px;
     height: 600px;
 }
 
 .bigscreen img {
-    width: 800px;
-    height: 600px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
+
+.bigscreen:hover img {
+    transform: scale(1.1);
+}
+
+
 
 .infoblock li {
     display: block;
@@ -111,7 +122,6 @@ h3 {
 }
 
 .infoblock img {
-
     height: 300px;
     float: left;
 }
