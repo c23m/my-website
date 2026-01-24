@@ -15,7 +15,7 @@ jobs:
       - name: Execute deployment commands on server
         run: |
           ssh -o StrictHostKeyChecking=no root@grassit.cn "
-            cd var/www/grassit.cn &&
+            cd /var/www/grassit.cn &&
             git pull origin main &&
             # 在此添加你的构建或重启命令，例如：
             # npm run build
