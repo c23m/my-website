@@ -14,8 +14,8 @@ jobs:
           ssh-private-key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
       - name: Execute deployment commands on server
         run: |
-          ssh -o StrictHostKeyChecking=no your_username@your_server_ip "
-            cd /path/to/your/project/grassit.cn &&
+          ssh -o StrictHostKeyChecking=no root@grassit.cn "
+            cd var/www/grassit.cn &&
             git pull origin main &&
             # 在此添加你的构建或重启命令，例如：
             # npm run build
