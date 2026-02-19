@@ -627,3 +627,13 @@ footer a {
 .mb-2 {
     margin-bottom: 1rem;
 }
+
+/* 测试性代码 */
+#test_img {
+    width: 200px;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    transform: none;
+    box-shadow: none;
+}

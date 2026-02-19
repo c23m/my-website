@@ -1,8 +1,45 @@
+//测试性代码
+const myImage = document.getElementById('test_img')
+
+myImage.onclick = () => {
+    const mySrc = myImage.getAttribute("src")
+    if (mySrc === "assets/images/info_t.png") {
+        myImage.setAttribute("src", "assets/images/grass_info.png")
+    } else {
+        myImage.setAttribute("src", "assets/images/info_t.png")
+    }
+};
+
+let myButton = document.getElementById("changing_title")
+let myHeading = document.getElementById("test-heading")
+
+function setUserName() {
+    const myName = prompt("Please enter your name.")
+    if (!myName) {
+        setUserName()
+    }
+    else {
+        localStorage.setItem("name", myName)
+        myHeading.textContent = `Welcome, ${myName}`
+    }
+}
+
+if (!localStorage.getItem("name")) {
+    setUserName()
+} else {
+    const storedName = localStorage.getItem("name")
+    myHeading.textContent = `Welcome, ${storedName}`
+}
+
+myButton.onclick = () => {
+    setUserName()
+};
+
 // 1. 计数器功能
-const countElement = document.getElementById('count');
-const increaseBtn = document.getElementById('increase');
-const decreaseBtn = document.getElementById('decrease');
-const resetBtn = document.getElementById('reset');
+const countElement = document.getElementById('count')
+const increaseBtn = document.getElementById('increase')
+const decreaseBtn = document.getElementById('decrease')
+const resetBtn = document.getElementById('reset')
 
 let count = 0;
 

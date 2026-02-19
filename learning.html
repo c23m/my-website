@@ -11,9 +11,9 @@
 <body>
     <!-- 页头，通常放导航。-->
     <header>
-        <a href="index.html">返回主站</a>
         <nav class="site-nav" aria-label="主导航">
             <ul>
+                <li><a href="index.html">返回主站</a></li>
                 <li><a href="#h1-title">顶部</a></li>
                 <li><a href="#test-form">表单</a></li>
                 <li><a href="#bottom">底部</a></li>
@@ -21,6 +21,12 @@
     </header>
     <!-- 核心内容区：main -->
     <main class="learning-content">
+        <section id="test-area" aria-labelledby="test-heading">
+            <h1 id="test-heading">前端学习的测试页面</h1>
+            <p>欢迎来到前端学习页面！本页面旨在展示各种HTML、CSS和JavaScript的功能和示例，供学习和测试之用。</p>
+            <img src="assets/images/info_t.png" alt="信息图示例" loading="lazy" id="test_img">
+            <button id="changing_title"> 改变标题 </button>
+        </section>
         <section id="layout-test" aria-labelledby="layout-heading">
             <h2 id="layout-heading">现代布局测试区</h2>
 
