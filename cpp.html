@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x76ee;&#x5f55;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="目录">目录</h1>
+<ul>
+<li><a href="#%E7%9B%AE%E5%BD%95">目录</a></li>
+<li><a href="#c-%E7%AE%97%E6%B3%95%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E4%B8%8E%E6%96%B9%E6%B3%95%E9%80%9F%E6%9F%A5%E5%88%B7%E9%A2%98%E7%B2%BE%E7%AE%80%E7%89%88">C++ 算法常用容器与方法速查（刷题精简版）</a>
+<ul>
+<li><a href="#%E4%B8%80%E5%AE%B9%E5%99%A8%E6%A6%82%E8%A7%88">一、容器概览</a></li>
+<li><a href="#%E4%BA%8C%E9%80%9A%E7%94%A8%E5%AE%B9%E5%99%A8%E6%96%B9%E6%B3%95">二、通用容器方法</a></li>
+<li><a href="#%E4%B8%89%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E8%AF%A6%E8%A7%A3">三、常用容器详解</a>
+<ul>
+<li><a href="#1-vector%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84">1. <code>vector</code>（动态数组）</a></li>
+<li><a href="#2-deque%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97">2. <code>deque</code>（双端队列）</a></li>
+<li><a href="#3-list%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8">3. <code>list</code>（双向链表）</a></li>
+<li><a href="#4-string%E5%AD%97%E7%AC%A6%E4%B8%B2">4. <code>string</code>（字符串）</a></li>
+<li><a href="#5-set--multiset%E6%9C%89%E5%BA%8F%E9%9B%86%E5%90%88">5. <code>set</code> / <code>multiset</code>（有序集合）</a></li>
+<li><a href="#6-map--multimap%E6%9C%89%E5%BA%8F%E6%98%A0%E5%B0%84">6. <code>map</code> / <code>multimap</code>（有序映射）</a></li>
+<li><a href="#7-unordered_set--unordered_map%E5%93%88%E5%B8%8C%E9%9B%86%E5%90%88%E6%98%A0%E5%B0%84">7. <code>unordered_set</code> / <code>unordered_map</code>（哈希集合/映射）</a></li>
+<li><a href="#8-%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8">8. 容器适配器</a>
+<ul>
+<li><a href="#stack%E6%A0%88"><code>stack</code>（栈）</a></li>
+<li><a href="#queue%E9%98%9F%E5%88%97"><code>queue</code>（队列）</a></li>
+<li><a href="#priority_queue%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E9%BB%98%E8%AE%A4%E6%9C%80%E5%A4%A7%E5%A0%86"><code>priority_queue</code>（优先队列，默认最大堆）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%9B%9B%E9%80%9A%E7%94%A8%E7%AE%97%E6%B3%95algorithm--numeric">四、通用算法（<code>&lt;algorithm&gt;</code> + <code>&lt;numeric&gt;</code>）</a>
+<ul>
+<li><a href="#1-%E6%8E%92%E5%BA%8F%E4%B8%8E%E5%A0%86">1. 排序与堆</a></li>
+<li><a href="#2-%E6%9F%A5%E6%89%BE%E4%B8%8E%E4%BA%8C%E5%88%86">2. 查找与二分</a></li>
+<li><a href="#3-%E4%BF%AE%E6%94%B9%E4%B8%8E%E6%93%8D%E4%BD%9C">3. 修改与操作</a></li>
+<li><a href="#4-%E6%95%B0%E5%80%BC%E7%AE%97%E6%B3%95numeric">4. 数值算法（<code>&lt;numeric&gt;</code>）</a></li>
+<li><a href="#5-%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C%E8%A6%81%E6%B1%82%E8%BE%93%E5%85%A5%E6%9C%89%E5%BA%8F">5. 集合操作（要求输入有序）</a></li>
+<li><a href="#6-%E6%9C%80%E5%B0%8F%E6%9C%80%E5%A4%A7">6. 最小/最大</a></li>
+<li><a href="#7-%E6%8E%92%E5%88%97">7. 排列</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%94%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%A4%BA%E4%BE%8B">五、基础语法示例</a>
+<ul>
+<li><a href="#1-%E5%88%9B%E5%BB%BA%E5%AE%B9%E5%99%A8">1. 创建容器</a></li>
+<li><a href="#2-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">2. 基本操作</a></li>
+<li><a href="#3-%E7%AE%97%E6%B3%95%E4%BD%BF%E7%94%A8">3. 算法使用</a></li>
+<li><a href="#4-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%A4%B1%E6%95%88%E6%B3%A8%E6%84%8F">4. 迭代器失效注意</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%AD%E5%88%B7%E9%A2%98%E5%B0%8F%E8%B4%B4%E5%A3%AB">六、刷题小贴士</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="c-算法常用容器与方法速查刷题精简版">C++ 算法常用容器与方法速查（刷题精简版）</h1>
+<p>本文档专为算法竞赛/刷题整理，只包含最常用的容器、方法及通用算法，略去了实际刷题中极少用到的特性。所有方法均给出完整签名，便于快速查阅。</p>
+<hr>
+<h2 id="一容器概览">一、容器概览</h2>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>容器</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顺序容器</td>
+<td><code>vector</code></td>
+<td>动态数组，随机访问，尾部操作快</td>
+</tr>
+<tr>
+<td></td>
+<td><code>deque</code></td>
+<td>双端队列，两端操作快，随机访问</td>
+</tr>
+<tr>
+<td></td>
+<td><code>list</code></td>
+<td>双向链表，任意位置插入/删除快</td>
+</tr>
+<tr>
+<td></td>
+<td><code>string</code></td>
+<td>字符串，可视为 <code>vector&lt;char&gt;</code></td>
+</tr>
+<tr>
+<td>关联容器</td>
+<td><code>set</code> / <code>multiset</code></td>
+<td>有序集合，红黑树，键唯一/可重复</td>
+</tr>
+<tr>
+<td></td>
+<td><code>map</code> / <code>multimap</code></td>
+<td>有序映射，键值对，键唯一/可重复</td>
+</tr>
+<tr>
+<td>无序关联容器</td>
+<td><code>unordered_set</code> / <code>unordered_map</code></td>
+<td>哈希集合/映射，平均 O(1) 操作</td>
+</tr>
+<tr>
+<td>容器适配器</td>
+<td><code>stack</code></td>
+<td>栈，LIFO</td>
+</tr>
+<tr>
+<td></td>
+<td><code>queue</code></td>
+<td>队列，FIFO</td>
+</tr>
+<tr>
+<td></td>
+<td><code>priority_queue</code></td>
+<td>优先队列，默认最大堆</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="二通用容器方法">二、通用容器方法</h2>
+<p>以下方法几乎所有容器都支持。</p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size_type size() const</code></td>
+<td>元素个数</td>
+</tr>
+<tr>
+<td><code>bool empty() const</code></td>
+<td>是否为空</td>
+</tr>
+<tr>
+<td><code>void clear()</code></td>
+<td>清空所有元素</td>
+</tr>
+<tr>
+<td><code>iterator begin()</code></td>
+<td>首迭代器</td>
+</tr>
+<tr>
+<td><code>iterator end()</code></td>
+<td>尾后迭代器</td>
+</tr>
+<tr>
+<td><code>reverse_iterator rbegin()</code></td>
+<td>反向首迭代器</td>
+</tr>
+<tr>
+<td><code>reverse_iterator rend()</code></td>
+<td>反向尾后迭代器</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="三常用容器详解">三、常用容器详解</h2>
+<h3 id="1-vector动态数组">1. <code>vector</code>（动态数组）</h3>
+<p><strong>头文件</strong>：<code>&lt;vector&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void push_back(const T&amp; val)</code></td>
+<td>尾部添加元素</td>
+</tr>
+<tr>
+<td><code>void pop_back()</code></td>
+<td>删除尾部元素</td>
+</tr>
+<tr>
+<td><code>iterator insert(iterator pos, const T&amp; val)</code></td>
+<td>在 pos 前插入 val，返回插入位置</td>
+</tr>
+<tr>
+<td><code>iterator erase(iterator pos)</code></td>
+<td>删除 pos 处元素，返回下一元素</td>
+</tr>
+<tr>
+<td><code>iterator erase(iterator first, iterator last)</code></td>
+<td>删除区间 [first, last) 内元素</td>
+</tr>
+<tr>
+<td><code>T&amp; operator[](size_t pos)</code></td>
+<td>下标访问（不检查边界）</td>
+</tr>
+<tr>
+<td><code>T&amp; at(size_t pos)</code></td>
+<td>带边界检查的访问</td>
+</tr>
+<tr>
+<td><code>T&amp; front()</code></td>
+<td>首元素</td>
+</tr>
+<tr>
+<td><code>T&amp; back()</code></td>
+<td>尾元素</td>
+</tr>
+<tr>
+<td><code>void resize(size_t count)</code></td>
+<td>调整大小为 count（默认填充新元素）</td>
+</tr>
+<tr>
+<td><code>void reserve(size_t new_cap)</code></td>
+<td>预留容量</td>
+</tr>
+<tr>
+<td><code>size_t capacity() const</code></td>
+<td>当前容量</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-deque双端队列">2. <code>deque</code>（双端队列）</h3>
+<p><strong>头文件</strong>：<code>&lt;deque&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void push_front(const T&amp; val)</code></td>
+<td>头部添加元素</td>
+</tr>
+<tr>
+<td><code>void pop_front()</code></td>
+<td>删除头部元素</td>
+</tr>
+<tr>
+<td><code>void push_back(const T&amp; val)</code></td>
+<td>尾部添加元素</td>
+</tr>
+<tr>
+<td><code>void pop_back()</code></td>
+<td>删除尾部元素</td>
+</tr>
+<tr>
+<td><code>T&amp; operator[](size_t pos)</code></td>
+<td>下标访问</td>
+</tr>
+<tr>
+<td><code>T&amp; front()</code></td>
+<td>首元素</td>
+</tr>
+<tr>
+<td><code>T&amp; back()</code></td>
+<td>尾元素</td>
+</tr>
+<tr>
+<td><code>iterator insert(iterator pos, const T&amp; val)</code></td>
+<td>同 vector</td>
+</tr>
+<tr>
+<td><code>iterator erase(iterator pos)</code></td>
+<td>同 vector</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-list双向链表">3. <code>list</code>（双向链表）</h3>
+<p><strong>头文件</strong>：<code>&lt;list&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void push_front(const T&amp; val)</code></td>
+<td>头部添加元素</td>
+</tr>
+<tr>
+<td><code>void pop_front()</code></td>
+<td>删除头部元素</td>
+</tr>
+<tr>
+<td><code>void push_back(const T&amp; val)</code></td>
+<td>尾部添加元素</td>
+</tr>
+<tr>
+<td><code>void pop_back()</code></td>
+<td>删除尾部元素</td>
+</tr>
+<tr>
+<td><code>iterator insert(iterator pos, const T&amp; val)</code></td>
+<td>插入</td>
+</tr>
+<tr>
+<td><code>iterator erase(iterator pos)</code></td>
+<td>删除</td>
+</tr>
+<tr>
+<td><code>void remove(const T&amp; val)</code></td>
+<td>删除所有等于 val 的元素</td>
+</tr>
+<tr>
+<td><code>void unique()</code></td>
+<td>删除连续重复元素</td>
+</tr>
+<tr>
+<td><code>void sort()</code></td>
+<td>排序（升序）</td>
+</tr>
+<tr>
+<td><code>void reverse()</code></td>
+<td>反转链表</td>
+</tr>
+<tr>
+<td><code>void splice(iterator pos, list&amp; other)</code></td>
+<td>将 other 移动到 pos 前</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-string字符串">4. <code>string</code>（字符串）</h3>
+<p><strong>头文件</strong>：<code>&lt;string&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size_t size() / length()</code></td>
+<td>长度</td>
+</tr>
+<tr>
+<td><code>const char* c_str()</code></td>
+<td>返回 C 风格字符串</td>
+</tr>
+<tr>
+<td><code>void clear()</code></td>
+<td>清空</td>
+</tr>
+<tr>
+<td><code>char&amp; operator[](size_t pos)</code></td>
+<td>下标访问</td>
+</tr>
+<tr>
+<td><code>string&amp; append(const string&amp; str)</code></td>
+<td>追加</td>
+</tr>
+<tr>
+<td><code>string&amp; insert(size_t pos, const string&amp; str)</code></td>
+<td>插入</td>
+</tr>
+<tr>
+<td><code>string&amp; erase(size_t pos = 0, size_t count = npos)</code></td>
+<td>删除子串</td>
+</tr>
+<tr>
+<td><code>size_t find(const string&amp; str, size_t pos = 0)</code></td>
+<td>查找子串，返回下标或 npos</td>
+</tr>
+<tr>
+<td><code>string substr(size_t pos = 0, size_t count = npos)</code></td>
+<td>取子串</td>
+</tr>
+<tr>
+<td><code>int compare(const string&amp; str)</code></td>
+<td>比较，返回负数/0/正数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-set--multiset有序集合">5. <code>set</code> / <code>multiset</code>（有序集合）</h3>
+<p><strong>头文件</strong>：<code>&lt;set&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pair&lt;iterator,bool&gt; insert(const T&amp; val)</code></td>
+<td>插入（返回是否成功），multiset 无 bool</td>
+</tr>
+<tr>
+<td><code>iterator find(const T&amp; val)</code></td>
+<td>查找，返回迭代器，未找到返回 end()</td>
+</tr>
+<tr>
+<td><code>size_t count(const T&amp; val)</code></td>
+<td>返回 val 的出现次数</td>
+</tr>
+<tr>
+<td><code>iterator lower_bound(const T&amp; val)</code></td>
+<td>第一个 &gt;= val 的元素</td>
+</tr>
+<tr>
+<td><code>iterator upper_bound(const T&amp; val)</code></td>
+<td>第一个 &gt; val 的元素</td>
+</tr>
+<tr>
+<td><code>pair&lt;iterator,iterator&gt; equal_range(const T&amp; val)</code></td>
+<td>返回等于 val 的区间</td>
+</tr>
+<tr>
+<td><code>size_t erase(const T&amp; val)</code></td>
+<td>删除所有等于 val 的元素，返回删除个数</td>
+</tr>
+<tr>
+<td><code>iterator erase(iterator pos)</code></td>
+<td>删除 pos 处元素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-map--multimap有序映射">6. <code>map</code> / <code>multimap</code>（有序映射）</h3>
+<p><strong>头文件</strong>：<code>&lt;map&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T&amp; operator[](const Key&amp; key)</code></td>
+<td><strong>仅 map</strong>：访问或插入（若不存在）</td>
+</tr>
+<tr>
+<td><code>T&amp; at(const Key&amp; key)</code></td>
+<td><strong>仅 map</strong>：带检查访问</td>
+</tr>
+<tr>
+<td><code>pair&lt;iterator,bool&gt; insert(const pair&lt;Key,T&gt;&amp; kv)</code></td>
+<td>插入键值对（multimap 返回 iterator）</td>
+</tr>
+<tr>
+<td><code>iterator find(const Key&amp; key)</code></td>
+<td>查找键，返回迭代器</td>
+</tr>
+<tr>
+<td><code>size_t count(const Key&amp; key)</code></td>
+<td>出现次数</td>
+</tr>
+<tr>
+<td><code>iterator lower_bound(const Key&amp; key)</code></td>
+<td>第一个键 &gt;= key 的元素</td>
+</tr>
+<tr>
+<td><code>iterator upper_bound(const Key&amp; key)</code></td>
+<td>第一个键 &gt; key 的元素</td>
+</tr>
+<tr>
+<td><code>pair&lt;iterator,iterator&gt; equal_range(const Key&amp; key)</code></td>
+<td>返回键为 key 的区间</td>
+</tr>
+<tr>
+<td><code>size_t erase(const Key&amp; key)</code></td>
+<td>删除键为 key 的元素</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-unordered_set--unordered_map哈希集合映射">7. <code>unordered_set</code> / <code>unordered_map</code>（哈希集合/映射）</h3>
+<p><strong>头文件</strong>：<code>&lt;unordered_set&gt;</code>、<code>&lt;unordered_map&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pair&lt;iterator,bool&gt; insert(const T&amp; val)</code></td>
+<td>插入（返回是否成功）</td>
+</tr>
+<tr>
+<td><code>iterator find(const T&amp; val)</code></td>
+<td>查找</td>
+</tr>
+<tr>
+<td><code>size_t count(const T&amp; val)</code></td>
+<td>出现次数</td>
+</tr>
+<tr>
+<td><code>size_t erase(const T&amp; val)</code></td>
+<td>删除</td>
+</tr>
+<tr>
+<td><code>T&amp; operator[](const Key&amp; key)</code></td>
+<td><strong>仅 unordered_map</strong>：访问或插入</td>
+</tr>
+<tr>
+<td><code>T&amp; at(const Key&amp; key)</code></td>
+<td><strong>仅 unordered_map</strong>：带检查访问</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-容器适配器">8. 容器适配器</h3>
+<h4 id="stack栈"><code>stack</code>（栈）</h4>
+<p><strong>头文件</strong>：<code>&lt;stack&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void push(const T&amp; val)</code></td>
+<td>压栈</td>
+</tr>
+<tr>
+<td><code>void pop()</code></td>
+<td>弹栈（无返回）</td>
+</tr>
+<tr>
+<td><code>T&amp; top()</code></td>
+<td>返回栈顶</td>
+</tr>
+<tr>
+<td><code>bool empty()</code></td>
+<td>判空</td>
+</tr>
+<tr>
+<td><code>size_t size()</code></td>
+<td>大小</td>
+</tr>
+</tbody>
+</table>
+<h4 id="queue队列"><code>queue</code>（队列）</h4>
+<p><strong>头文件</strong>：<code>&lt;queue&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void push(const T&amp; val)</code></td>
+<td>入队</td>
+</tr>
+<tr>
+<td><code>void pop()</code></td>
+<td>出队（无返回）</td>
+</tr>
+<tr>
+<td><code>T&amp; front()</code></td>
+<td>返回队首</td>
+</tr>
+<tr>
+<td><code>T&amp; back()</code></td>
+<td>返回队尾</td>
+</tr>
+<tr>
+<td><code>bool empty()</code></td>
+<td>判空</td>
+</tr>
+<tr>
+<td><code>size_t size()</code></td>
+<td>大小</td>
+</tr>
+</tbody>
+</table>
+<h4 id="priority_queue优先队列默认最大堆"><code>priority_queue</code>（优先队列，默认最大堆）</h4>
+<p><strong>头文件</strong>：<code>&lt;queue&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>方法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void push(const T&amp; val)</code></td>
+<td>插入元素</td>
+</tr>
+<tr>
+<td><code>void pop()</code></td>
+<td>删除堆顶</td>
+</tr>
+<tr>
+<td><code>const T&amp; top()</code></td>
+<td>返回堆顶</td>
+</tr>
+<tr>
+<td><code>bool empty()</code></td>
+<td>判空</td>
+</tr>
+<tr>
+<td><code>size_t size()</code></td>
+<td>大小</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="四通用算法algorithm--numeric">四、通用算法（<code>&lt;algorithm&gt;</code> + <code>&lt;numeric&gt;</code>）</h2>
+<h3 id="1-排序与堆">1. 排序与堆</h3>
+<table>
+<thead>
+<tr>
+<th>算法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void sort(RandomIt first, RandomIt last)</code></td>
+<td>升序排序</td>
+</tr>
+<tr>
+<td><code>void sort(RandomIt first, RandomIt last, Compare comp)</code></td>
+<td>自定义比较排序</td>
+</tr>
+<tr>
+<td><code>void stable_sort(RandomIt first, RandomIt last)</code></td>
+<td>稳定排序</td>
+</tr>
+<tr>
+<td><code>void nth_element(RandomIt first, RandomIt nth, RandomIt last)</code></td>
+<td>第 nth 大的元素归位</td>
+</tr>
+<tr>
+<td><code>void make_heap(RandomIt first, RandomIt last)</code></td>
+<td>建堆（最大堆）</td>
+</tr>
+<tr>
+<td><code>void push_heap(RandomIt first, RandomIt last)</code></td>
+<td>将末尾元素插入堆</td>
+</tr>
+<tr>
+<td><code>void pop_heap(RandomIt first, RandomIt last)</code></td>
+<td>将堆顶移到末尾</td>
+</tr>
+<tr>
+<td><code>void sort_heap(RandomIt first, RandomIt last)</code></td>
+<td>堆排序</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-查找与二分">2. 查找与二分</h3>
+<table>
+<thead>
+<tr>
+<th>算法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InputIt find(InputIt first, InputIt last, const T&amp; val)</code></td>
+<td>查找第一个等于 val 的元素</td>
+</tr>
+<tr>
+<td><code>InputIt find_if(InputIt first, InputIt last, UnaryPred p)</code></td>
+<td>查找第一个满足 p 的元素</td>
+</tr>
+<tr>
+<td><code>bool binary_search(ForwardIt first, ForwardIt last, const T&amp; val)</code></td>
+<td>二分查找是否存在</td>
+</tr>
+<tr>
+<td><code>ForwardIt lower_bound(ForwardIt first, ForwardIt last, const T&amp; val)</code></td>
+<td>第一个 &gt;= val</td>
+</tr>
+<tr>
+<td><code>ForwardIt upper_bound(ForwardIt first, ForwardIt last, const T&amp; val)</code></td>
+<td>第一个 &gt; val</td>
+</tr>
+<tr>
+<td><code>pair&lt;ForwardIt,ForwardIt&gt; equal_range(ForwardIt first, ForwardIt last, const T&amp; val)</code></td>
+<td>等于 val 的区间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-修改与操作">3. 修改与操作</h3>
+<table>
+<thead>
+<tr>
+<th>算法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OutputIt copy(InputIt first, InputIt last, OutputIt d_first)</code></td>
+<td>复制范围</td>
+</tr>
+<tr>
+<td><code>void fill(ForwardIt first, ForwardIt last, const T&amp; val)</code></td>
+<td>填充</td>
+</tr>
+<tr>
+<td><code>ForwardIt remove(ForwardIt first, ForwardIt last, const T&amp; val)</code></td>
+<td>移除等于 val 的元素（返回新结尾）</td>
+</tr>
+<tr>
+<td><code>ForwardIt unique(ForwardIt first, ForwardIt last)</code></td>
+<td>移除连续重复元素</td>
+</tr>
+<tr>
+<td><code>void reverse(BidirIt first, BidirIt last)</code></td>
+<td>反转</td>
+</tr>
+<tr>
+<td><code>ForwardIt rotate(ForwardIt first, ForwardIt n_first, ForwardIt last)</code></td>
+<td>旋转范围</td>
+</tr>
+<tr>
+<td><code>void generate(ForwardIt first, ForwardIt last, Generator g)</code></td>
+<td>用生成器填充</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-数值算法numeric">4. 数值算法（<code>&lt;numeric&gt;</code>）</h3>
+<table>
+<thead>
+<tr>
+<th>算法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T accumulate(InputIt first, InputIt last, T init)</code></td>
+<td>累加（可自定义操作）</td>
+</tr>
+<tr>
+<td><code>OutputIt partial_sum(InputIt first, InputIt last, OutputIt d_first)</code></td>
+<td>计算前缀和</td>
+</tr>
+<tr>
+<td><code>void iota(ForwardIt first, ForwardIt last, T val)</code></td>
+<td>填充递增序列</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-集合操作要求输入有序">5. 集合操作（要求输入有序）</h3>
+<table>
+<thead>
+<tr>
+<th>算法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OutputIt set_union(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt d_first)</code></td>
+<td>并集</td>
+</tr>
+<tr>
+<td><code>OutputIt set_intersection(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt d_first)</code></td>
+<td>交集</td>
+</tr>
+<tr>
+<td><code>OutputIt set_difference(InputIt1 first1, InputIt1 last1, InputIt2 first2, InputIt2 last2, OutputIt d_first)</code></td>
+<td>差集</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-最小最大">6. 最小/最大</h3>
+<table>
+<thead>
+<tr>
+<th>算法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>const T&amp; min(const T&amp; a, const T&amp; b)</code></td>
+<td>较小值</td>
+</tr>
+<tr>
+<td><code>const T&amp; max(const T&amp; a, const T&amp; b)</code></td>
+<td>较大值</td>
+</tr>
+<tr>
+<td><code>ForwardIt min_element(ForwardIt first, ForwardIt last)</code></td>
+<td>最小元素迭代器</td>
+</tr>
+<tr>
+<td><code>ForwardIt max_element(ForwardIt first, ForwardIt last)</code></td>
+<td>最大元素迭代器</td>
+</tr>
+<tr>
+<td><code>pair&lt;ForwardIt,ForwardIt&gt; minmax_element(ForwardIt first, ForwardIt last)</code></td>
+<td>同时返回最小最大迭代器</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-排列">7. 排列</h3>
+<table>
+<thead>
+<tr>
+<th>算法签名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool next_permutation(BidirIt first, BidirIt last)</code></td>
+<td>下一个排列</td>
+</tr>
+<tr>
+<td><code>bool prev_permutation(BidirIt first, BidirIt last)</code></td>
+<td>上一个排列</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="五基础语法示例">五、基础语法示例</h2>
+<h3 id="1-创建容器">1. 创建容器</h3>
+<pre><code class="language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
+
+<span class="hljs-comment">// 栈上创建</span>
+vector&lt;<span class="hljs-type">int</span>&gt; v1;                         <span class="hljs-comment">// 空vector</span>
+<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">v2</span><span class="hljs-params">(<span class="hljs-number">10</span>, <span class="hljs-number">5</span>)</span></span>;                   <span class="hljs-comment">// 10个5</span>
+vector&lt;<span class="hljs-type">int</span>&gt; v3{<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>};              <span class="hljs-comment">// 列表初始化</span>
+
+map&lt;string, <span class="hljs-type">int</span>&gt; mp;                     <span class="hljs-comment">// 空map</span>
+mp[<span class="hljs-string">&quot;one&quot;</span>] = <span class="hljs-number">1</span>;                            <span class="hljs-comment">// 插入</span>
+
+<span class="hljs-comment">// 堆上创建（使用智能指针，推荐）</span>
+<span class="hljs-keyword">auto</span> pv = make_unique&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>);   <span class="hljs-comment">// C++14</span>
+</code></pre>
+<h3 id="2-基本操作">2. 基本操作</h3>
+<pre><code class="language-cpp"><span class="hljs-comment">// vector 添加/删除</span>
+v1.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">100</span>);
+v1.<span class="hljs-built_in">pop_back</span>();
+v1.<span class="hljs-built_in">insert</span>(v1.<span class="hljs-built_in">begin</span>(), <span class="hljs-number">99</span>);
+v1.<span class="hljs-built_in">erase</span>(v1.<span class="hljs-built_in">begin</span>());
+
+<span class="hljs-comment">// 遍历</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x : v1) cout &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = v1.<span class="hljs-built_in">begin</span>(); it != v1.<span class="hljs-built_in">end</span>(); ++it) cout &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+
+<span class="hljs-comment">// map 查找</span>
+<span class="hljs-keyword">if</span> (mp.<span class="hljs-built_in">find</span>(<span class="hljs-string">&quot;one&quot;</span>) != mp.<span class="hljs-built_in">end</span>()) {
+    cout &lt;&lt; mp[<span class="hljs-string">&quot;one&quot;</span>];          <span class="hljs-comment">// 使用[]再次访问</span>
+}
+</code></pre>
+<h3 id="3-算法使用">3. 算法使用</h3>
+<pre><code class="language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;numeric&gt;</span></span>
+
+vector&lt;<span class="hljs-type">int</span>&gt; a = {<span class="hljs-number">5</span>, <span class="hljs-number">2</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">9</span>};
+
+<span class="hljs-comment">// 排序</span>
+<span class="hljs-built_in">sort</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>());               <span class="hljs-comment">// 升序</span>
+
+<span class="hljs-comment">// 二分查找（需有序）</span>
+<span class="hljs-type">bool</span> found = <span class="hljs-built_in">binary_search</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>(), <span class="hljs-number">8</span>);
+
+<span class="hljs-comment">// 去重</span>
+a.<span class="hljs-built_in">erase</span>(<span class="hljs-built_in">unique</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>()), a.<span class="hljs-built_in">end</span>());
+
+<span class="hljs-comment">// 反转</span>
+<span class="hljs-built_in">reverse</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>());
+
+<span class="hljs-comment">// 累加</span>
+<span class="hljs-type">int</span> sum = <span class="hljs-built_in">accumulate</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>(), <span class="hljs-number">0</span>);
+
+<span class="hljs-comment">// 查找</span>
+<span class="hljs-keyword">auto</span> it = <span class="hljs-built_in">find</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>(), <span class="hljs-number">8</span>);
+<span class="hljs-keyword">if</span> (it != a.<span class="hljs-built_in">end</span>()) cout &lt;&lt; *it;
+</code></pre>
+<h3 id="4-迭代器失效注意">4. 迭代器失效注意</h3>
+<ul>
+<li><code>vector</code>：<code>insert</code>、<code>push_back</code> 可能导致重新分配，使所有迭代器失效；<code>erase</code> 使被删元素及之后迭代器失效。</li>
+<li><code>deque</code>：除首尾插入外，其他插入可能导致所有迭代器失效。</li>
+<li><code>list</code> / <code>set</code> / <code>map</code>：插入和删除不影响其他迭代器（除指向被删元素的迭代器）。</li>
+</ul>
+<hr>
+<h2 id="六刷题小贴士">六、刷题小贴士</h2>
+<ul>
+<li>
+<p><strong>常用容器组合</strong>：</p>
+<ul>
+<li>需要随机访问 → <code>vector</code></li>
+<li>需要两端操作 → <code>deque</code></li>
+<li>需要快速查找 → <code>unordered_map</code> / <code>unordered_set</code></li>
+<li>需要有序键值对 → <code>map</code></li>
+<li>需要自动排序且去重 → <code>set</code></li>
+<li>需要单调栈/队列 → <code>stack</code> / <code>deque</code></li>
+<li>需要求 top k → <code>priority_queue</code></li>
+</ul>
+</li>
+<li>
+<p><strong>常用算法组合</strong>：</p>
+<ul>
+<li>排序 + 二分 → <code>sort</code> + <code>lower_bound</code></li>
+<li>前缀和 → <code>partial_sum</code> 或手动循环</li>
+<li>去重排序 → <code>sort</code> + <code>unique</code> + <code>erase</code></li>
+<li>全排列 → <code>next_permutation</code></li>
+<li>最大子数组和 → Kadane 算法（非 STL）</li>
+<li>图论 → 手写 BFS/DFS，配合 <code>queue</code>/<code>stack</code></li>
+</ul>
+</li>
+<li>
+<p><strong>避免不必要操作</strong>：<code>vector</code> 频繁在头部插入应改用 <code>deque</code>；<code>map</code> 的 <code>[]</code> 会插入不存在的键，查找时优先用 <code>find</code>。</p>
+</li>
+</ul>
+<p>此文档已裁剪掉算法竞赛中极少用到的部分，保留最核心内容。保存为 <code>.md</code> 文件即可随时查阅。</p>
+
+            
+            
+        </body>
+        </html>
