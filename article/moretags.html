@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HTML标签详解：section, meta, script等标签的用法">
+    <meta name="keywords" content="HTML, section, meta, script, 标签, 网页开发">
+    <title>HTML标签详解</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #777;
+            --success: #2ecc71;
+            --warning: #f39c12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 2rem;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        
+        .tag-section {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .tag-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .tag-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .tag-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .tag-example {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .tag-example code {
+            display: block;
+            white-space: pre-wrap;
+        }
+        
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .meta-table th, .meta-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .meta-table th {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .meta-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .use-case {
+            background-color: var(--light);
+            padding: 1rem;
+            border-left: 4px solid var(--secondary);
+            margin: 1rem 0;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>HTML标签详解</h1>
+            <p class="intro">section, meta, script等标签的用法与示例</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="tag-section">
+            <div class="tag-header">
+                <div class="tag-icon">&lt;&gt;</div>
+                <h2>&lt;section&gt; 标签</h2>
+            </div>
+            
+            <div class="tag-info">
+                <p><strong>&lt;section&gt;</strong> 是HTML5引入的语义化标签，用于定义文档中的节或段，通常包含一个标题和内容。</p>
+                
+                <h3>使用场景：</h3>
+                <ul>
+                    <li>将相关内容分组在一起</li>
+                    <li>表示文档中的独立部分</li>
+                    <li>与&lt;article&gt;区别：&lt;article&gt;用于独立内容，&lt;section&gt;用于主题分组</li>
+                </ul>
+                
+                <div class="tag-example">
+                    <code>&lt;section&gt;
+  &lt;h2&gt;章节标题&lt;/h2&gt;
+  &lt;p&gt;这是章节的内容...&lt;/p&gt;
+  &lt;p&gt;更多内容...&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+  &lt;h2&gt;另一个章节&lt;/h2&gt;
+  &lt;p&gt;这是另一个章节的内容...&lt;/p&gt;
+&lt;/section&gt;</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="tag-section">
+            <div class="tag-header">
+                <div class="tag-icon">&lt;&gt;</div>
+                <h2>&lt;meta&gt; 标签</h2>
+            </div>
+            
+            <div class="tag-info">
+                <p><strong>&lt;meta&gt;</strong> 标签用于提供关于HTML文档的元数据，不会显示在页面上，但对机器（如浏览器、搜索引擎）可读。</p>
+                
+                <h3>常见meta标签类型：</h3>
+                <table class="meta-table">
+                    <thead>
+                        <tr>
+                            <th>属性</th>
+                            <th>值</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>charset</td>
+                            <td>字符编码（如UTF-8）</td>
+                            <td>定义文档的字符编码</td>
+                        </tr>
+                        <tr>
+                            <td>name="viewport"</td>
+                            <td>width=device-width, initial-scale=1.0</td>
+                            <td>控制移动设备上的视口行为</td>
+                        </tr>
+                        <tr>
+                            <td>name="description"</td>
+                            <td>页面描述文本</td>
+                            <td>提供页面内容的简短描述</td>
+                        </tr>
+                        <tr>
+                            <td>name="keywords"</td>
+                            <td>逗号分隔的关键词列表</td>
+                            <td>提供与页面内容相关的关键词</td>
+                        </tr>
+                        <tr>
+                            <td>name="author"</td>
+                            <td>作者姓名</td>
+                            <td>定义页面的作者</td>
+                        </tr>
+                        <tr>
+                            <td>http-equiv="refresh"</td>
+                            <td>时间;url=地址</td>
+                            <td>定期刷新或重定向页面</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="tag-example">
+                    <code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="免费在线教程"&gt;
+  &lt;meta name="keywords" content="HTML,CSS,JavaScript"&gt;
+  &lt;meta name="author" content="张三"&gt;
+  &lt;meta http-equiv="refresh" content="30"&gt;
+&lt;/head&gt;</code>
+                </div>
+            </div>
+        </section>
+
+        <section class="tag-section">
+            <div class="tag-header">
+                <div class="tag-icon">&lt;&gt;</div>
+                <h2>&lt;script&gt; 标签</h2>
+            </div>
+            
+            <div class="tag-info">
+                <p><strong>&lt;script&gt;</strong> 标签用于定义客户端JavaScript脚本，可以包含脚本语句或通过src属性指向外部脚本文件。</p>
+                
+                <h3>主要属性：</h3>
+                <ul>
+                    <li><strong>src</strong>: 指定外部脚本的URL</li>
+                    <li><strong>type</strong>: 规定脚本的MIME类型（默认text/javascript）</li>
+                    <li><strong>async</strong>: 异步执行脚本（仅对外部脚本有效）</li>
+                    <li><strong>defer</strong>: 延迟脚本执行到文档解析完成</li>
+                </ul>
+                
+                <div class="use-case">
+                    <h3>使用场景：</h3>
+                    <p>1. 内联JavaScript代码：</p>
+                    <div class="tag-example">
+                        <code>&lt;script&gt;
+  document.getElementById("demo").innerHTML = "Hello JavaScript!";
+&lt;/script&gt;</code>
+                    </div>
+                    
+                    <p>2. 引用外部JavaScript文件：</p>
+                    <div class="tag-example">
+                        <code>&lt;script src="myscript.js"&gt;&lt;/script&gt;</code>
+                    </div>
+                    
+                    <p>3. 使用async属性异步加载：</p>
+                    <div class="tag-example">
+                        <code>&lt;script src="demo_async.js" async&gt;&lt;/script&gt;</code>
+                    </div>
+                    
+                    <p>4. 使用defer属性延迟执行：</p>
+                    <div class="tag-example">
+                        <code>&lt;script src="demo_defer.js" defer&gt;&lt;/script&gt;</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tag-section">
+            <div class="tag-header">
+                <div class="tag-icon">&lt;&gt;</div>
+                <h2>其他重要标签</h2>
+            </div>
+            
+            <div class="tag-info">
+                <h3>&lt;link&gt; 标签</h3>
+                <p>定义文档与外部资源的关系，最常见的是链接CSS样式表。</p>
+                <div class="tag-example">
+                    <code>&lt;link rel="stylesheet" type="text/css" href="mystyle.css"&gt;</code>
+                </div>
+                
+                <h3>&lt;style&gt; 标签</h3>
+                <p>用于定义HTML文档的内部CSS样式。</p>
+                <div class="tag-example">
+                    <code>&lt;style&gt;
+  body {background-color: powderblue;}
+  h1 {color: blue;}
+&lt;/style&gt;</code>
+                </div>
+                
+                <h3>&lt;div&gt; 标签</h3>
+                <p>通用容器，用于分组和样式化内容块。</p>
+                <div class="tag-example">
+                    <code>&lt;div class="container"&gt;
+  &lt;h2&gt;这是一个div容器&lt;/h2&gt;
+  &lt;p&gt;包含一些内容...&lt;/p&gt;
+&lt;/div&gt;</code>
+                </div>
+                
+                <h3>&lt;span&gt; 标签</h3>
+                <p>内联容器，用于标记文本的一部分或文档的一部分。</p>
+                <div class="tag-example">
+                    <code>&lt;p&gt;这是一段文本，其中&lt;span class="highlight"&gt;这部分很重要&lt;/span&gt;。&lt;/p&gt;</code>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 HTML标签详解 | Web开发参考指南</p>
+        </div>
+    </footer>
+
+    <script>
+        // 示例JavaScript代码
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('页面加载完成！');
+            
+            // 可以在这里添加更多交互功能
+            const sections = document.querySelectorAll('.tag-section');
+            sections.forEach(section => {
+                section.addEventListener('click', function() {
+                    this.style.backgroundColor = this.style.backgroundColor === 'rgb(236, 240, 241)' ? '#fff' : '#ecf0f1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

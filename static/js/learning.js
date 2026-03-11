@@ -3,10 +3,10 @@ const myImage = document.getElementById('test_img')
 
 myImage.onclick = () => {
     const mySrc = myImage.getAttribute("src")
-    if (mySrc === "assets/images/info_t.png") {
-        myImage.setAttribute("src", "assets/images/grass_info.png")
+    if (mySrc === "/static/images/info_t.png") {
+        myImage.setAttribute("src", "/static/images/grass_info.png")
     } else {
-        myImage.setAttribute("src", "assets/images/info_t.png")
+        myImage.setAttribute("src", "/static/images/info_t.png")
     }
 };
 

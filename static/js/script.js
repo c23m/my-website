@@ -1,5 +1,5 @@
 let pictIndex = 0
-const imgurl = ["assets/images/sunny.png", "assets/images/dark.png", "assets/images/dessert.png", "assets/images/color.png"]
+const imgurl = ["/static/images/sunny.png", "/static/images/dark.png", "/static/images/dessert.png", "/static/images/color.png"]
 const bigScreen = document.querySelector(".bigscreen img")
 const lb = document.querySelector("#lButton")
 const rb = document.querySelector("#rButton")
