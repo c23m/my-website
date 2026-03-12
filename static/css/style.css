@@ -50,15 +50,21 @@ nav {
     z-index: 20;
 }
 
-nav ul {
-    font-size: 1em;
-    display: flex;
-    flex-flow: row;
-    gap: 20px;
+nav .more {
+    display: inline;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
-nav ul a:hover {
+nav .more:hover {
     color: #38e;
+}
+
+nav ul {
+    display: none;
 }
 
 .icon {
@@ -71,25 +77,7 @@ nav ul a:hover {
 }
 
 .github {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #000;
-    padding: 5px;
-    margin-right: 0;
-}
-
-.github span {
     display: none;
-}
-
-.github img {
-    height: 30px;
-}
-
-.github:hover {
-    background-color: #ccc;
-    border-radius: 5px;
 }
 
 /* Main */
@@ -360,12 +348,41 @@ aside ul li a {
         transition: all 0.3s ease;
     }
 
-    .github span {
-        display: inline-block;
+    nav ul {
+        font-size: 1em;
+        display: flex;
+        flex-flow: row;
+        gap: 20px;
+    }
+
+    nav ul a:hover {
+        color: #38e;
+    }
+
+    nav button.more {
+        display: none;
+    }
+
+    .github {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #000;
+        padding: 5px;
+        margin-right: 0;
+    }
+
+    .github img {
+        height: 30px;
+    }
+
+    .github:hover {
+        background-color: #ccc;
+        border-radius: 50%;
     }
 
     main {
-        grid-template-columns: 280px 1fr;
+        grid-template-columns: 20em 1fr;
         grid-template-areas:
             "articles products"
         ;
@@ -410,6 +427,10 @@ aside ul li a {
 }
 
 @media screen and (min-width: 1024px) {
+    main {
+        grid-template-columns: 25em 1fr;
+    }
+
     .products ul li {
         max-width: 800px;
         height: 300px;
