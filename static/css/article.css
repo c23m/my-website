@@ -627,30 +627,27 @@ main {
     display: grid;
     gap: 30px;
     padding: 20px;
-    grid-template-columns: 1fr;
+    padding-top: 50px;
+    grid-template-columns: clamp(300px, 40%, 400px) 1fr;
     grid-template-areas:
-        "aside"
-        "article"
+        "aside article"
     ;
 }
 
 
 aside {
     display: none;
-    position: fixed;
-    position: fixed;
-    top: 0;
+    position: sticky;
+    max-height: calc(100vh - 50px);
+    top: 50px;
     left: 0;
     bottom: 0;
     overflow-y: auto;
     grid-area: aside;
-    padding: 26px 20px;
-    margin-top: 20px;
-    width: clamp(300px, 40%, 400px)
+    padding: 0 20px;
 }
 
 article {
-    grid-area: article;
     padding: 20px 26px;
 }
 
@@ -766,10 +763,6 @@ article {
 
     aside {
         display: block;
-    }
-
-    article {
-        margin-left: clamp(300px, 40%, 400px)
     }
 }
 

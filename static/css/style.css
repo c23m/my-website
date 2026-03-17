@@ -241,6 +241,7 @@ aside ul li a {
     border-top: 1px solid #e7e7e7;
     font-size: 14px;
     color: #666;
+    z-index: 5;
 }
 
 .footer-container {
