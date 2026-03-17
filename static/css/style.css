@@ -6,6 +6,7 @@
 
 html {
     font: 16px/1.6 "Microsoft Yahei", "PingFang SC", sans-serif;
+    scroll-padding-top: 60px;
 }
 
 body {
@@ -308,6 +309,7 @@ aside ul li a {
         padding: 20px;
         background: linear-gradient(to right bottom, #33e, #3ee);
         color: #fff;
+        transition: background-color 0.3s ease;
     }
 
     header h1 {
@@ -344,7 +346,7 @@ aside ul li a {
 
     header button:hover {
         background-color: #555;
-        color: #2de;
+        color: #eee;
         transition: all 0.3s ease;
     }
 
