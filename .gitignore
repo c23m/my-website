@@ -1,6 +1,3 @@
-# 忽略 Obsidian 笔记软件本地配置
-docs/.obsidian/
-
 # 忽略所有压缩包和设计源文件（Git管理这些效率很低）
 *.zip
 *.psd
@@ -13,3 +10,7 @@ Thumbs.db
 # 忽略编辑器/IDE配置文件夹
 .vscode/
 .idea/
+.venv/
+__pycache__/
+*.pyc
+instance/
